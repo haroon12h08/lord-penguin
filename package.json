@@ -1,0 +1,21 @@
+{
+  "name": "lord-penguin-monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "LORD-PENGUIN (AegisBOM) - Autonomous Temporal Procurement & Treasury Engine",
+  "workspaces": [
+    "packages/shared",
+    "apps/api",
+    "apps/web"
+  ],
+  "scripts": {
+    "build": "npm run build --workspaces --if-present",
+    "test": "npm run test --workspaces --if-present",
+    "dev": "npm run dev --workspace=@lord-penguin/api",
+    "db:migrate": "npm run db:migrate --workspace=@lord-penguin/api",
+    "db:seed": "npm run db:seed --workspace=@lord-penguin/api"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.3"
+  }
+}

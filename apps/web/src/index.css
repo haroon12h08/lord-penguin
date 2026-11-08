@@ -1,0 +1,89 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    background-color: #0B0A09;
+    color: #F5F0E6;
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Inter", system-ui, sans-serif;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::selection {
+    background-color: #E5A93C;
+    color: #0B0A09;
+  }
+}
+
+/* Apple HIG Frosted Hairlines & Translucent Panels */
+.frosted-glass {
+  background-color: rgba(22, 19, 17, 0.82);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.frosted-card {
+  background-color: rgba(30, 26, 23, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* macOS Pro bespoke dark scrollbars */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.22);
+}
+
+/* Perfect alignment for financial tabular amounts */
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+  font-family: "SF Mono", "JetBrains Mono", Menlo, Monaco, Consolas, monospace;
+}
+
+/* Subtle Apple Amber Pulse */
+@keyframes amber-breathe {
+  0%, 100% {
+    opacity: 1;
+    filter: drop-shadow(0 0 6px rgba(229, 169, 60, 0.3));
+  }
+  50% {
+    opacity: 0.82;
+    filter: drop-shadow(0 0 14px rgba(229, 169, 60, 0.55));
+  }
+}
+
+.animate-amber-breathe {
+  animation: amber-breathe 2.4s infinite ease-in-out;
+}
+
+/* AG Grid Dark Quartz overrides for Espresso & Obsidian macOS */
+.ag-theme-quartz-dark {
+  --ag-background-color: #0B0A09 !important;
+  --ag-header-background-color: rgba(22, 19, 17, 0.95) !important;
+  --ag-odd-row-background-color: rgba(22, 19, 17, 0.35) !important;
+  --ag-row-hover-color: rgba(255, 255, 255, 0.04) !important;
+  --ag-selected-row-background-color: rgba(229, 169, 60, 0.1) !important;
+  --ag-border-color: rgba(255, 255, 255, 0.08) !important;
+  --ag-header-foreground-color: #A3998E !important;
+  --ag-foreground-color: #F5F0E6 !important;
+  --ag-font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", Inter, sans-serif !important;
+  --ag-font-size: 12px !important;
+  --ag-cell-horizontal-border: solid rgba(255, 255, 255, 0.04) !important;
+}
